@@ -112,6 +112,21 @@ function getCurrentAcceleration() {
 
 
 
+function getPicture(){
+    navigator.camera.getPicture(function(picture_file){
+                                    get("picture_val").innerHTML = '<img src="' + picture_file +'" />';
+                                },
+                                function(){
+                                },
+                                { quality : 75,
+                                  destinationType : Camera.DestinationType.DATA_URL,
+                                  sourceType : Camera.PictureSourceType.CAMERA,
+                                  allowEdit : true,
+                                  encodingType: Camera.EncodingType.JPEG,
+                                  targetWidth: 100,
+                                  targetHeight: 100});
+}
+
 function test_requestFileSystem() {
     window.requestFileSystem( LocalFileSystem.PERSISTENT, 0, function( p_fileSystem ) {
                                  get( "debug_output" ).innerHTML = p_fileSystem.name + " / " + p_fileSystem.root.fullPath;

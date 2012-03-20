@@ -23,6 +23,7 @@ SOURCES += main.cpp \
     src/cordova.cpp \
     src/cplugin.cpp \
     src/plugins/contacts.cpp
+    src/plugins/camera.cpp
 HEADERS += \
     src/plugins/notification.h \
     src/plugins/geolocation.h \
@@ -36,6 +37,8 @@ HEADERS += \
     src/plugins/events.h \
     src/cordova.h \
     src/cplugin.h \
+    src/plugins/camera.h \
+    src/plugins/cameraresolution.h
     src/plugins/contacts.h
 
 greaterThan(QT_MAJOR_VERSION, 4) {
