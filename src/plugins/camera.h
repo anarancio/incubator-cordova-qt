@@ -65,6 +65,7 @@ private:
 private:
     QList<QSize> m_supportedResolutions;
     QList<QObject*> m_supportedResolutionObjects;
+    static Camera *m_camera;
 };
 
 #endif // CAMERA_H

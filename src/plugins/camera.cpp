@@ -11,6 +11,8 @@
 
 #include <QDebug>
 
+Camera *Camera::m_camera = new Camera;
+
 Camera::Camera() : CPlugin(){
     PluginRegistry::getRegistry()->registerPlugin( "com.cordova.Camera", this );
 }
@@ -36,6 +38,7 @@ void Camera::getPicture( int scId, int ecId, QVariantMap p_options){
 
 QString Camera::newImageFile(int width, int height)
 {
+qDebug() << Q_FUNC_INFO;
 #ifdef Q_OS_SYMBIAN
     QString filename;
     TRAPD(err, filename = symbianCapture(width, height));
